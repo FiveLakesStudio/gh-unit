@@ -1,0 +1,81 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf350
+{\fonttbl\f0\fnil\fcharset0 LucidaGrande;\f1\fmodern\fcharset0 Courier;\f2\fmodern\fcharset0 Courier-Bold;
+}
+{\colortbl;\red255\green255\blue255;\red254\green3\blue0;\red47\green65\blue122;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{circle\}}{\leveltext\leveltemplateid2\'01\uc0\u9702 ;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww24080\viewh7800\viewkind0
+\deftab720
+\pard\pardeftab720\sa220\ql\qnatural
+
+\f0\b\fs28 \cf0 Installing (iOS)\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls1\ilvl0
+\b0\fs24 \cf0 {\listtext	\'95	}Add a 
+\f1 New Target
+\f0 . Select 
+\f1 Cocoa Touch -> Application
+\f0 . Name it 
+\f1 Tests
+\f0  (or something similar).\
+{\listtext	\'95	}Copy and add 
+\f1 GHUnitIOS.framework
+\f0  into your project. (Add Existing Files, select 
+\f1 GHUnitIOS.framework
+\f0 , and select the "Tests" target.)\
+{\listtext	\'95	}Add the following frameworks to 
+\f1 Linked Libraries
+\f0 :\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\ql\qnatural
+\ls1\ilvl1
+\f1 \cf0 {\listtext	
+\f0 \uc0\u9702 
+\f1 	}GHUnitIOS.framework
+\f0 \
+\ls1\ilvl1
+\f1 {\listtext	
+\f0 \uc0\u9702 
+\f1 	}CoreGraphics.framework
+\f0 \
+\ls1\ilvl1
+\f1 {\listtext	
+\f0 \uc0\u9702 
+\f1 	}Foundation.framework
+\f0 \
+\ls1\ilvl1
+\f1 {\listtext	
+\f0 \uc0\u9702 
+\f1 	}UIKit.framework
+\f0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls1\ilvl0\cf0 {\listtext	\'95	}Under 'Framework Search Paths' make sure the (parent) directory to GHUnitIOS.framework is listed.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls1\ilvl0
+\b \cf0 {\listtext	\'95	}Under '\cf2 Other Linker Flags\cf0 ' in the 
+\f2 Tests
+\f0  target, add 
+\f2 \cf2 -ObjC
+\f0 \cf0  and 
+\f2 \cf2 -all_load
+\f0 \cf0 \
+{\listtext	\'95	}By default, the \cf2 Tests-Info.plist\cf0  file includes 
+\f2 \cf2 MainWindow
+\f0  for 
+\f2 Main nib\cf0  file base name
+\f0 . \cf2 You should clear this field\cf0 .\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls1\ilvl0
+\b0 \cf0 {\listtext	\'95	}Add the GHUnitIOSTestMain.m ({\field{\*\fldinst{HYPERLINK "http://github.com/gabriel/gh-unit/blob/master/Project-IPhone/GHUnitIOSTestMain.m"}}{\fldrslt \cf3 http://github.com/gabriel/gh-unit/blob/master/Project-IPhone/GHUnitIOSTestMain.m}}) file into your project and make sure its enabled for the "Tests" target.\
+{\listtext	\'95	}(Optional) Create and and set a prefix header (
+\f1 Tests_Prefix.pch
+\f0 ) and add 
+\f1 import <GHUnitIOS/GHUnit.h>
+\f0  to it, and then you won't have to include that import for every test.\
+{\listtext	\'95	}(Optional) {\field{\*\fldinst{HYPERLINK "http://gabriel.github.com/gh-unit/_command_line.html#Makefile"}}{\fldrslt 
+\b \cf3 Install Makefile}}\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls1\ilvl0
+\b \cf3 {\listtext	\'95	}{\field{\*\fldinst{HYPERLINK "http://gabriel.github.com/gh-unit/_examples.html"}}{\fldrslt Create a test}}
+\b0 \cf0 \
+{\listtext	\'95	}Build and run the "Tests" target.\
+}
